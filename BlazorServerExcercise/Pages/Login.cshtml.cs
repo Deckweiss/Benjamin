@@ -8,7 +8,7 @@ namespace BlazorServerExcercise.Pages
     {
         public async Task OnGet(string redirectUri)
         {
-            await HttpContext.ChallengeAsync("oidc", new AuthenticationProperties{RedirectUri = redirectUri});
+            await HttpContext.ChallengeAsync("oidc", new AuthenticationProperties{RedirectUri = redirectUri ?? "/"});
         }
     }
 }
